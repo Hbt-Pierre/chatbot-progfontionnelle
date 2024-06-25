@@ -1,0 +1,179 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  --color-header: #9dcfce;
+  --color-accent: #c7e2e0;
+  --color-accent-txt: white;
+
+  --color-contacts-background: #f3f3f3;
+
+  --size-header: 60px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+/* Stucture princpial */
+
+html,body,#app{
+  width: 100%;
+  height: 100%;
+}
+
+.content{
+  display: flex;
+  height: calc(100% - var(--size-header));
+}
+
+.contact-holder{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 0.4;
+  gap: 25px;
+  padding: 15px;
+  background: var(--color-contacts-background);
+}
+
+.conversation-holder{
+  height: 100%;
+  flex-grow: 5;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/*Header*/
+.app-bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: var(--size-header);
+  background: var(--color-header);
+  color: var(--color-accent-txt);
+}
+
+/*Zone des contacts*/
+
+.contact-holder h2{
+  font-size: 20px;
+  text-align: center;
+}
+
+.bot{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  padding: 20px;
+
+  border-radius: 15px;
+}
+
+.bot.selected{
+  background: var(--color-accent);
+}
+
+.bot img{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.bot .title{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/*Zone des conversations*/
+
+/*Formulaire*/
+.conversation-holder #form{
+  display: flex;
+  justify-content: space-evenly;
+  height: 55px;
+  padding: 8px;
+  border-top: 1px solid var(--color-contacts-background);
+}
+
+.conversation-holder input{
+  height: 100%;
+  width: 70%;
+  padding: 5px;
+  border: solid 2px var(--color-contacts-background);
+  border-radius: 10px;
+}
+
+.conversation-holder button{
+  height: 100%;
+  width: 28%;
+
+  background: var(--color-accent);
+  border: solid 1px var(--color-accent);
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.conversation-holder button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+
+/*Msg*/
+
+#conversations{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  overflow: auto;
+
+  width: 100%;
+  height: 100%;
+}
+
+/*User message (à droite)*/
+
+.user-message{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.user-message > div{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: end;
+  justify-content: end;
+}
+
+
+/*Bot message (à gauche)*/
+.bot-message{
+  display: flex;
+  gap: 15px
+}
+.bot-message img{
+  object-fit: contain;
+  width: 40px;
+  height: 40px;
+}
+
+
+/*Bulle de text*/
+.txt-message{
+  padding: 10px;
+  border-radius: 10px;
+  width: max-content;
+
+  background: var(--color-contacts-background);
+}
+
+.date-message{
+  font-size: 10px;
+}
