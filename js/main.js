@@ -35,6 +35,8 @@ uiRenderUserInputComponent(USER_INPUT_ID, (rawMsg) => {
     const userMessage = handleNewUserMessage(rawMsg);
     addMessageToConversation(CONVERSATIONS,userMessage)
     saveToLocalStorage(CONVERSATIONS);
+    uiScrollToMax();
+
 
     //On regarde les réponses des bots
     triggerBotCommand(BOT_LIST,rawMsg,(bot,botMsg) => {
